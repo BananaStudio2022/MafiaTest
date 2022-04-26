@@ -9,10 +9,6 @@ public class PlayerController : MonoBehaviour
     private Vector2 _direction;
     private Rigidbody2D _rb;
 
-    private float _horizontal = 0f;
-
-    const float speedXMultiplier = 50f;
-
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -22,6 +18,7 @@ public class PlayerController : MonoBehaviour
     {
         _direction.x = Input.GetAxisRaw("Horizontal");
         _direction.y = Input.GetAxisRaw("Vertical");
+        
         _rb.MovePosition(_rb.position + _direction * speed * Time.fixedDeltaTime);
     }
 }
